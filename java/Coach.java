@@ -1,27 +1,40 @@
-public class Coach extends Personne{
-    
-    private String specialite;
+import java.util.ArrayList;
+
+public class Coach extends Personne {
+
+    private ArrayList<SpecialiteCoach> specialites;
+
     private int numeroSalarie;
 
-    public Coach(int id, String name, String surname, String email, String specialite, int numeroSalarie){
+    public Coach(int id, String name, String surname, String email, int numeroSalarie) {
         super(id, name, surname, email);
-        this.specialite = specialite;
+        this.specialites = new ArrayList<>();
         this.numeroSalarie = numeroSalarie;
     }
 
-    public void setSpecialite(String spe){
-        this.specialite = spe;
+    public ArrayList<SpecialiteCoach> getSpecialite() {
+        return specialites;
     }
 
-    public String getSpecialite(){
-        return specialite;
+    public void addSpecialite(SpecialiteCoach specialite) {
+        if (!specialites.contains(specialite)) {
+            specialites.add(specialite);
+        }
     }
 
-    public void setNumeroSalarie(int i){
+    public void removeSpecialite(SpecialiteCoach specialite) {
+        specialites.remove(specialite);
+    }
+
+    public boolean hasSpecialite(SpecialiteCoach specialite) {
+        return specialites.contains(specialite);
+    }
+
+    public void setNumeroSalarie(int i) {
         this.numeroSalarie = i;
     }
 
-    public int getNumeroSalarie(){
+    public int getNumeroSalarie() {
         return numeroSalarie;
     }
 
