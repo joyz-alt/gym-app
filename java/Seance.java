@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import javax.management.MBeanException;
-
 public class Seance {
     
     private int id;
