@@ -1,30 +1,28 @@
-import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Main {
-    
     public static void main(String[] args) {   
         AbonnementType basic = AbonnementType.BASIC;
         AbonnementType premium = AbonnementType.PREMIUM;
         AbonnementType extreme = AbonnementType.EXTREME;
 
-        Membre james = new Membre(0001, "James", "Callaghan", "jamescallaghanpro@gmail.com", "25/02/2025", basic, 1000);
-        Membre denis = new Membre(0002, "Denis", "bourdier", "denis@gmail.com", "25/02/2025", premium ,2000);
-        
+        LocalDate dateAbonnement = LocalDate.of(2025, 04, 10);
+
+        Membre james = new Membre(0001, "James", "Callaghan", "jamescallaghanpro@gmail.com", dateAbonnement, basic, 1000);        
         Coach didier = new Coach(0003, "didier", "Deschamps", "didi@gmail.com", 104594);
-        
+
         didier.addSpecialite(SpecialiteCoach.YOGA);
-        didier.addSpecialite(SpecialiteCoach.FORCE);
-        
-        System.out.println("Spécilité du coach: " + didier.getSpecialite());
+        System.out.println(didier);
 
- 
-        Seance s = new Seance(0004, "Football drills", 5); 
 
-        System.out.println("Capacité maximum: " + s.getCapaciteMax());
-        System.out.println("Nombre de places restantes: " + s.nombrePlaceRestantes());
-        s.ajouterMembre(denis);
+        LocalDate date = LocalDate.of(2025, 02, 25);
+        Seance s = new Seance(1004, "Yoga débutant", SpecialiteCoach.YOGA, 5, date);
+        s.attribuerCoach(didier);
+        System.out.println(s);
 
-        System.out.println("Nombre de places restantes: " + s.nombrePlaceRestantes());
+
+
+
         s.ajouterMembre(james);
         System.out.println("Nombre de places restantes: " + s.nombrePlaceRestantes());
 

@@ -1,10 +1,12 @@
+import java.time.LocalDate;
+
 public class Membre extends Personne{
 
-    private String dateInscription;
+    private LocalDate dateInscription;
     private AbonnementType abonnement;
     private int numeroAdherent;
 
-    public Membre(int id, String name, String surname, String email, String dateInscription, AbonnementType abonnement, int numeroAdherent){
+    public Membre(int id, String name, String surname, String email, LocalDate dateInscription, AbonnementType abonnement, int numeroAdherent){
         super(id, name, surname, email);
         this.dateInscription = dateInscription;
         this.abonnement = abonnement;
@@ -15,11 +17,11 @@ public class Membre extends Personne{
         this.abonnement = a;
     }
 
-    public void setDateInscription(String d){
+    public void setDateInscription(LocalDate d){
         this.dateInscription = d;
     }
 
-    public String getDateInscription(){
+    public LocalDate getDateInscription(){
         return dateInscription;
     }
 

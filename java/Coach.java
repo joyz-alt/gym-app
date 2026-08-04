@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-
 public class Coach extends Personne {
 
     private ArrayList<SpecialiteCoach> specialites;
-
     private int numeroSalarie;
 
     public Coach(int id, String name, String surname, String email, int numeroSalarie) {
@@ -12,9 +10,10 @@ public class Coach extends Personne {
         this.numeroSalarie = numeroSalarie;
     }
 
-    public ArrayList<SpecialiteCoach> getSpecialite() {
+    public ArrayList<SpecialiteCoach> getSpecialites() {
         return specialites;
     }
+    
 
     public void addSpecialite(SpecialiteCoach specialite) {
         if (!specialites.contains(specialite)) {
@@ -40,6 +39,6 @@ public class Coach extends Personne {
 
     @Override
     public String toString() {
-        return "Salarié: " + getNumeroSalarie() + " | Spécialité: " + getSpecialite();
+        return getId() + ": " + getFullName() + " | " + getEmail() + " | " + getSpecialites();
     }
 }

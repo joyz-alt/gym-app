@@ -23,10 +23,6 @@ public abstract class Personne {
         return id;
     }
 
-    public void showPersonne(Personne p){
-        System.out.println(p);
-    }
-
     @Override
     public String toString(){
         return id + "| Full name: " + getFullName() + " | Email: " + getEmail();
